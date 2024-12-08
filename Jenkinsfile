@@ -1,5 +1,9 @@
 pipeline {
     agent any
+    triggers {
+        // Le trigger est géré par GitHub Webhook
+        githubPush()
+    }
     stages {
         stage('Checkout') {
             steps {
