@@ -17,7 +17,7 @@ pipeline {
             steps {
                 script {
                     echo "Running Python script on Windows agent."
-                    bat 'python main.py'  // Exécuter un script Python sur l'agent Windows
+                    bat 'py main.py'  // Exécuter un script Python sur l'agent Windows
                 }
             }
         }
