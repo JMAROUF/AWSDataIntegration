@@ -1,7 +1,7 @@
 
 def main():
-    print({__name__})
+    print(__name__)
     if __name__=="main":
-        print({__name__})
+        print('yes')
 main()
 # // TODO: test pipeline 4
