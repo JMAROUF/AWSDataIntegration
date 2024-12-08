@@ -15,7 +15,7 @@ pipeline {
                 script {
                     echo 'Building project...'
                     // Exemple de commande de build
-                    sh 'echo Hello, Jenkins!'
+                    bat 'echo Hello, Jenkins!'
                 }
             }
         }
