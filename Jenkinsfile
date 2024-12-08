@@ -8,7 +8,11 @@ pipeline {
         }
         stage('Build') {
             steps {
-                // Votre étape de build ici
+                script {
+                    echo 'Building project...'
+                    // Exemple de commande de build
+                    sh 'echo Hello, Jenkins!'
+                }
             }
         }
     }
