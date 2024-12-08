@@ -1,6 +1,6 @@
 
 def main():
-    print(__name__)
+    print(f"{__name__} variable")
     if __name__=="main":
         print('yes')
 main()
