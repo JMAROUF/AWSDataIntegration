@@ -5,22 +5,25 @@ pipeline {
         githubPush()
     }
     stages {
-        stage('Build') {
-            steps {
-                script {
-                    echo "This is a Windows agent build."
-                    bat 'echo Hello from Windows'  // Exemple de commande batch sur Windows
+        stage('Build and Run in Parallel') {
+            parallel {
+                stage('Build') {
+                    steps {
+                        script {
+                            echo "This is a Windows agent build."
+                            bat 'echo Hello from Windows'  // Exemple de commande batch sur Windows
+                        }
+                    }
                 }
-            }
-        }
-        stage('Run Python Script') {
-            steps {
-                script {
-                    echo "Running Python script on Windows agent."
-                    bat 'py main.py'  // Exécuter un script Python sur l'agent Windows
+                stage('Run Python Script') {
+                    steps {
+                        script {
+                            echo "Running Python script on Windows agent."
+                            bat 'py main.py'  // Exécuter un script Python sur l'agent Windows
+                        }
+                    }
                 }
             }
         }
     }
 }
-
