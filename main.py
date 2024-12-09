@@ -1,7 +1,8 @@
 
 def main():
 
-    if __name__=="__main__":
         print(f"you are in {__name__}")
-main()
+
+if __name__=="__main__":
+    main()
 # // TODO: test pipeline
