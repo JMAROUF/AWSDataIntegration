@@ -5,4 +5,5 @@ def main():
 
 if __name__=="__main__":
     main()
-# // TODO: test pipeline
+
+# // TODO: CREATE EXTRACT CLASS
