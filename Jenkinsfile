@@ -32,7 +32,7 @@ pipeline {
 							bat '''
 							REM Configurer git pour Jenkins
 							git config user.name "Jenkins"
-							git config user.email "developper.tester2018@gmail.com"
+							git config user.email "marouf.jamal@gmail.com"
 
 							REM Cloner le dépôt et se positionner sur preprod
 							git clone https://$GITHUB_TOKEN@github.com/JMAROUF/AWSDataIntegration.git
