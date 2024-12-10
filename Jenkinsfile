@@ -25,29 +25,30 @@ pipeline {
                 }
             }
         }
+		stage('Merge from Main to Preprod') {
+				steps {
+					script {
+						withCredentials([string(credentialsId: 'awsdataintegration_token', variable: 'GITHUB_TOKEN')]) {
+							bat '''
+							REM Configurer git pour Jenkins
+							git config user.name "Jenkins"
+							git config user.email "developper.tester2018@gmail.com"
+
+							REM Cloner le dépôt et se positionner sur preprod
+							git clone https://$GITHUB_TOKEN@github.com/JMAROUF/AWSDataIntegration.git
+							cd AWSDataIntegration
+							git checkout preprod
+
+							REM Fusionner la branche main dans preprod
+							git merge origin/main --no-ff
+
+							REM Pousser les modifications sur la branche preprod
+							git push origin preprod
+							'''
+						}
+					}
+				}
+		}
     }
-    stage('Merge from Main to Preprod') {
-            steps {
-                script {
-                    withCredentials([string(credentialsId: 'awsdataintegration_token', variable: 'GITHUB_TOKEN')]) {
-                        bat '''
-                        REM Configurer git pour Jenkins
-                        git config user.name "Jenkins"
-                        git config user.email "developper.tester2018@gmail.com"
 
-                        REM Cloner le dépôt et se positionner sur preprod
-                        git clone https://$GITHUB_TOKEN@github.com/JMAROUF/AWSDataIntegration.git
-                        cd AWSDataIntegration
-                        git checkout preprod
-
-                        REM Fusionner la branche main dans preprod
-                        git merge origin/main --no-ff
-
-                        REM Pousser les modifications sur la branche preprod
-                        git push origin preprod
-                        '''
-                    }
-                }
-            }
-        }
 }
