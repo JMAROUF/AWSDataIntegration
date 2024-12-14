@@ -34,8 +34,8 @@ pipeline {
 							git config user.name "Jenkins"
 							git config user.email "marouf.jamal@gmail.com"
 
-							REM Configurer git pour utiliser un cache d'informations d'identification pendant 15 minutes
-                            git config --global credential.helper cache --timeout=900
+							REM Configurer git pour utiliser le gestionnaire d'informations d'identification de Windows
+                            git config --global credential.helper manager
 
 
 							REM Cloner le dépôt et se positionner sur main
