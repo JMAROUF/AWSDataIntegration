@@ -34,16 +34,16 @@ pipeline {
 							git config user.name "Jenkins"
 							git config user.email "marouf.jamal@gmail.com"
 
-							REM Cloner le dépôt et se positionner sur preprod
+							REM Cloner le dépôt et se positionner sur main
 							git clone https://$GITHUB_TOKEN@github.com/JMAROUF/AWSDataIntegration.git
 							cd AWSDataIntegration
-							git checkout preprod
+							git checkout main
 
-							REM Fusionner la branche main dans preprod
-							git merge origin/main --no-ff
+							REM Fusionner la branche main dans main
+							git merge origin/preprod --no-ff
 
-							REM Pousser les modifications sur la branche preprod
-							git push origin preprod
+							REM Pousser les modifications sur la branche main
+							git push origin main
 							'''
 						}
 					}
