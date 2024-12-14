@@ -44,6 +44,7 @@ pipeline {
 
 							REM Pousser les modifications sur la branche preprod
 							git push origin preprod
+							REM operation terminée
 							'''
 						}
 					}
