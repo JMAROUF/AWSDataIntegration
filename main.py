@@ -12,7 +12,7 @@ if __name__=="__main__":
 
 # // TODO: ADDING SECURITY
 
-
+# // TODO: TEST DE LA PIEPLINE
 
 
 
