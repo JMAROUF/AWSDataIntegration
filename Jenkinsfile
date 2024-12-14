@@ -37,6 +37,11 @@ pipeline {
 							REM Configurer git pour utiliser le gestionnaire d'informations d'identification de Windows
                             git config --global credential.helper manager
 
+                            REM Vérifier si le répertoire AWSDataIntegration existe et le supprimer s'il existe
+                            if exist AWSDataIntegration (
+                                rd /s /q AWSDataIntegration
+                            )
+
 
 							REM Cloner le dépôt et se positionner sur main
 							git clone https://$GITHUB_TOKEN@github.com/JMAROUF/AWSDataIntegration.git
