@@ -34,12 +34,16 @@ pipeline {
 							git config user.name "Jenkins"
 							git config user.email "marouf.jamal@gmail.com"
 
+							REM Configurer git pour utiliser un cache d'informations d'identification pendant 15 minutes
+                            git config --global credential.helper cache --timeout=900
+
+
 							REM Cloner le dépôt et se positionner sur main
 							git clone https://$GITHUB_TOKEN@github.com/JMAROUF/AWSDataIntegration.git
 							cd AWSDataIntegration
 							git checkout main
 
-							REM Fusionner la branche main dans main
+							REM Fusionner la branche preprod dans main
 							git merge origin/preprod --no-ff
 
 							REM Pousser les modifications sur la branche main
