@@ -37,7 +37,7 @@ pipeline {
 							REM Cloner le dépôt et se positionner sur main
 							git clone https://$GITHUB_TOKEN@github.com/JMAROUF/AWSDataIntegration.git
 							cd AWSDataIntegration
-							REM git checkout main
+							git checkout main
 
 							REM Fusionner la branche main dans main
 							git merge origin/preprod --no-ff
